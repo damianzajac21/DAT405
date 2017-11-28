@@ -12,19 +12,30 @@ let speed = 3;
 let diameter = 50;
 let x1;
 let y1;
+let x2;
+let y2;
 function setup()
 {
-  createCanvas(640, 480);
+  createCanvas(500, 500);
   x1 = width/2;
   y1 = height/2;
+  x2 = height/2;
+  y2 = width/2;
+  background(200);
 }
 
 function draw()
 {
+
   x1 += random(-speed, speed);
   y1 += random(-speed, speed);
-  x1 = constrain(x1, 0, width);
-  y1 = constrain(y1, 0, height);
+  //+ random number between -3 and 3
+  x1 = constrain(x1, 0, 250);
+  y1 = constrain(y1, 0, 250);
+  x2 =-x1+width;
+  y2 =-y1+height;
+  //constrain makes sure that the circle(x1, y1) doesnt go beloyond 0 or
+  //width/height
   if(mouseIsPressed)
   {
     r = random(255);
@@ -33,5 +44,8 @@ function draw()
   }
   fill(r, g, b, 120);
   ellipse(x1, y1, diameter, diameter);
+  ellipse(x1, y2, diameter, diameter);
+  ellipse(x2, y2, diameter, diameter);
+  ellipse(x2, y1, diameter, diameter);
 
 }
