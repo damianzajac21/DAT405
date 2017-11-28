@@ -34,7 +34,7 @@ function draw()
   y1 = constrain(y1, 0, 250);
   x2 =-x1+width;
   y2 =-y1+height;
-  //constrain makes sure that the circle(x1, y1) doesnt go beloyond 0 or
+  //constrain makes sure that the circle(x1, y1) doesnt go beyond 0 or
   //width/height
   if(mouseIsPressed)
   {
